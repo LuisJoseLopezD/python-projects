@@ -1,0 +1,68 @@
+import tkinter as tk
+from tkinter import messagebox
+
+root = tk.Tk()
+root.title("My to do list app")
+root.geometry("300x300") #Geometria
+tasks = [] #Lista vacia para llenarla
+
+#Definiendo las funciones
+
+def limpiar_lista():
+    listas.delete(0, "end")
+    #Desde el primero hasta el ultimo
+
+def update_listbox():
+	limpiar_lista()
+	for task in tasks: #Rellenando la lista
+		listas.insert("end", task)	
+		
+def agregar():
+    task = txt_input.get()
+    tasks.append(task)
+    update_listbox()
+
+def borrar():
+    task = listas.get("active")
+    if task in tasks:
+        tasks.remove(task)
+        update_listbox()
+
+#Traducido: task es igual a la tarea que seleccionamos
+#si task esta en "tasks" removemos esa task
+#Luego simplemente actualizamos la lista
+
+#En tkMessageBox.askyesno("title","message")    
+    
+def salir():
+    quit()
+
+#pass sirve para hacer una funcion en blanco
+
+"""
+titulo = Tkinter.Label(root, text="To do list app", bg="white")
+titulo.grid(row=0,column=0)
+"""
+
+display = tk.Label(root, text="INGRESE UNA TAREA:", bg="white")
+display.grid(row=0,column=1)
+
+txt_input = tk.Entry(root, width=20)
+txt_input.grid(row=1,column=1) 
+
+#Boton 1
+add_task = tk.Button(root, text="  Agregar  ", bg="white", command=agregar)
+add_task.grid(row=1,column=0)
+
+#Boton 2
+delete = tk.Button(root, text="  Borrar  ", bg="white", command=borrar)
+delete.grid(row=2,column=0)
+
+#Boton 3
+Exit = tk.Button(root, text="Salir", bg="white", command=salir)
+Exit.grid(row=3,column=0)
+
+listas = tk.Listbox(root)
+listas.grid(row=2,column=1,rowspan=5)
+
+root.mainloop()
