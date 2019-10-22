@@ -37,6 +37,7 @@ display.grid(row=5,column=4, padx=30)
 
 password = tk.Entry(root, width=20)
 password.grid(row=5,column=5, padx=30) 
+passwrod.config(show="*")
 
 #Boton 2
 delete = tk.Button(root, text="Login", bg="white", command=loginsystem)
