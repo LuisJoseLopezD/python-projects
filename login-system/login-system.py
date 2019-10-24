@@ -10,7 +10,7 @@ def loginsystem():
     if user1 == username and password1 == key:
         print("Funcionando")
     else:
-        print("mensaje de error")
+        print("error message")
 
 import tkinter as tk
 from tkinter import messagebox
@@ -25,14 +25,14 @@ label = tk.Label(image=image)
 label.grid(row=3,column=4,columnspan=3, padx=30)
 label.config(bg='white')
 
-display = tk.Label(root, text="USUARIO", bg="white")
+display = tk.Label(root, text="USER", bg="white")
 display.grid(row=4,column=4,pady=20, padx=30)
 display.config(bg='white')
 
 user = tk.Entry(root, width=20)
 user.grid(row=4,column=5, pady=20, padx=30)
 
-display = tk.Label(root, text="CONTRASEÑA", bg="white")
+display = tk.Label(root, text="PASSWORD", bg="white")
 display.grid(row=5,column=4, padx=30)
 
 password = tk.Entry(root, width=20)
